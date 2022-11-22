@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotificationApp.MainPage">
+
+
+    <Grid
+        RowDefinitions="Auto, 7*, Auto, Auto">
+        <Entry
+            x:Name="txtUsername"
+            Placeholder="Titulo"/>
+
+        <Picker x:Name="picker" Grid.Row="1"
+        Title="Seleccione Producto">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Agua</x:String>
+                    <x:String>Gaseosa</x:String>
+                    <x:String>Cerveza</x:String>
+                    <x:String>Whisky</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Entry x:Name="cost" Keyboard="Numeric" Grid.Row="2"
+       Placeholder="Valor de Venta"
+    />
+
+        <ScrollView
+            Grid.Row="3">
+            <Label
+                x:Name="lblChat"
+                FontSize="18"
+                HorizontalOptions="StartAndExpand"
+                TextType="Html"></Label>
+        </ScrollView>
+
+        <Entry
+            Grid.Row="4"
+            x:Name="txtMessage"
+            Placeholder="Enter your message"/>
+
+        <Button
+            Grid.Row="5"
+            x:Name="btnSend"
+            Text="Send"
+            HorizontalOptions="FillAndExpand"
+            Clicked="btnSend_Clicked"/>
+
+    </Grid>
+
+</ContentPage>
